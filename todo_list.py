@@ -18,3 +18,11 @@ def view_tasks(tasks):
         for idx, task in enumerate(tasks, start=1):
             status = "Done" if task["done"] else "Not Done"
             print(f"{idx}. {task['task']} - {status}")
+
+def mark_task_done(tasks):
+    task_num = int(input("Enter the task number to mark as done: ")) - 1
+    if 0 <= task_num < len(tasks):
+        tasks[task_num]["done"] = True
+        print(f"Task '{tasks[task_num]['task']}' marked as done.")
+    else:
+        print("Invalid task number.")
