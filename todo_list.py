@@ -26,3 +26,11 @@ def mark_task_done(tasks):
         print(f"Task '{tasks[task_num]['task']}' marked as done.")
     else:
         print("Invalid task number.")
+
+def remove_task(tasks):
+    task_num = int(input("Enter the task number to remove: ")) - 1
+    if 0 <= task_num < len(tasks):
+        removed_task = tasks.pop(task_num)
+        print(f"Task '{removed_task['task']}' removed.")
+    else:
+        print("Invalid task number.")
