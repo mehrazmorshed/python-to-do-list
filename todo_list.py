@@ -34,3 +34,26 @@ def remove_task(tasks):
         print(f"Task '{removed_task['task']}' removed.")
     else:
         print("Invalid task number.")
+
+def main():
+    tasks = []
+    while True:
+        display_menu()
+        choice = input("Choose an option: ")
+        
+        if choice == '1':
+            add_task(tasks)
+        elif choice == '2':
+            view_tasks(tasks)
+        elif choice == '3':
+            mark_task_done(tasks)
+        elif choice == '4':
+            remove_task(tasks)
+        elif choice == '5':
+            print("Exiting the application. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
